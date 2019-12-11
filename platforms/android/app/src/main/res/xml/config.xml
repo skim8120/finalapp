@@ -10,6 +10,9 @@
     <feature name="Geolocation">
         <param name="android-package" value="org.apache.cordova.geolocation.Geolocation" />
     </feature>
+    <feature name="NativeTimer">
+        <param name="android-package" value="com.applurk.nativetimer.NativeTimerPlugin" />
+    </feature>
     <name>finalapp</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.

@@ -29,11 +29,20 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       "file": "plugins/cordova-plugin-geolocation/www/PositionError.js",
       "pluginId": "cordova-plugin-geolocation",
       "runs": true
+    },
+    {
+      "id": "cordova-plugin-timer.NativeTimer",
+      "file": "plugins/cordova-plugin-timer/www/nativetimer.js",
+      "pluginId": "cordova-plugin-timer",
+      "clobbers": [
+        "window.nativeTimer"
+      ]
     }
   ];
   module.exports.metadata = {
     "cordova-plugin-whitelist": "1.3.4",
     "cordova-plugin-device-motion": "2.0.1",
-    "cordova-plugin-geolocation": "4.0.2"
+    "cordova-plugin-geolocation": "4.0.2",
+    "cordova-plugin-timer": "1.0.1"
   };
 });

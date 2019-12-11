@@ -28,7 +28,7 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; connect-src 'self' https://cors-anywhere.herokuapp.com/ https://api.darksky.net/forecast/; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval' 'unsafe-inline';; connect-src 'self' https://cors-anywhere.herokuapp.com/ http://api.openweathermap.org/data/2.5/; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
@@ -41,17 +41,62 @@
         <div class="container">
             <div class = "row">
                 <div class = "col-sm">
-                    <h5>Current Weather</h5>
+                    <b><h1>Break Time Reminder</h1></b>
                 </div>
             </div>
             <div class = "row">
                 <div class ="col-sm" id="weather">
-                    <b><p><span id="icon"></span></p></b>
-                    <p>latitude: <span id="latitude"></span></p>
+
+<!--                    <p>latitude: <span id="latitude"></span></p>
                     <p>longitude: <span id="longitude"></span></p>
                     <p>timezone: <span id="timezone"></span></p>
-                    <p>summary: <span id="summary"></span></p>
-                    <p>UV Index: <span id="uvIndex"></span></p>
+                    <p>time: <span id="summary"></span></p>-->
+
+                    <form id="worktime">
+                        <h3>Work</h3>
+
+                        Hours:
+                        <input type="text" id="hours" name="hours" value="0" size="2" maxlength="2" />
+                        <br/>
+                        Minutes:
+                        <input type="text" id="minutes" name="minutes" value="0" size="2" maxlength="2" />
+                        <br/>
+                        Seconds:
+                        <input type="text" id="seconds" name="seconds" value="0" size="2" maxlength="2" />
+                        <br/>
+                        <h3>Break</h3>
+                        Hours:
+                        <input type="text" id="hours2" name="hours" value="0" size="2" maxlength="2" />
+                        <br/>
+                        Minutes:
+                        <input type="text" id="minutes2" name="minutes" value="0" size="2" maxlength="2" />
+                        <br/>
+                        Seconds:
+                        <input type="text" id="seconds2" name="seconds" value="0" size="2" maxlength="2" />
+                        <br/>
+                        <input type="button" id="btnct" value="Set Time" />
+
+                    </form>
+
+<!--                    <form id="breaktime">
+
+                    </form>-->
+
+                    <input type="button" value="Start" onclick="countdown()">
+                    <input type="button" value="Stop" onclick="cdpause()">
+                    <input type="button" value="Reset" onclick="cdreset();cdreset2();">
+
+
+                    <h3>WORK TIME</h3>
+                    <h1><span id="timespan"></span></h1>
+
+
+
+<br><br>
+
+                    <h3>BREAK TIME</h3>
+                    <h1><span id="timespan2"></span></h1>
+
                 </div>
             </div>
         </div>

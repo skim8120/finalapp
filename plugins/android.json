@@ -15,6 +15,9 @@
     },
     "cordova-plugin-geolocation": {
       "PACKAGE_NAME": "finalapp.iu.edu"
+    },
+    "cordova-plugin-timer": {
+      "PACKAGE_NAME": "finalapp.iu.edu"
     }
   },
   "dependent_plugins": {}
